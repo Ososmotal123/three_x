@@ -55,3 +55,4 @@ A JSON response of `{"success":true,...}` indicates that the backend, database c
 - Ensure Apache, MySQL, and PHP services in WampServer are green.
 - phpMyAdmin (`http://localhost/phpmyadmin`) lets you inspect the `quote_requests` table.
 - Check `C:\wamp64\logs\apache_error.log` if you receive a `500` response.
+"# companywebsite" 
