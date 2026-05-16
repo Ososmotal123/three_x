@@ -1,58 +1,36 @@
-# Three X Quote Form
+# TREEX Riyadh Website
 
-This project is a multilingual (English / Arabic) landing page with a PHP backend that stores quote requests in MySQL. The instructions below target a typical WampServer installation on Windows.
+A responsive bilingual landing page for TREEX Riyadh, a gypsum decoration and construction company.
 
-## Requirements
-- WampServer 3.3 (or newer) with Apache + MySQL + PHP 8.0+
-- MySQL account that can create databases/tables (the default `root` user on WAMP works)
+## Files
 
-## Setup
-1. Copy this folder into `C:\wamp64\www\three_x` (or any folder under `www`) and make sure WampServer is running (green tray icon).
-2. Edit `config.php` if you use non-default credentials. The default assumes:
-   - host: `localhost`
-   - username: `root`
-   - password: *(empty)*
-   - database: `three_x`
-3. Visit `http://localhost/three_x/index.html` (or `index-ar.html` for Arabic) from a browser served by Apache, **not** via `file://`.
+- `index.html` — website structure and SEO metadata
+- `styles.css` — full responsive design
+- `script.js` — Arabic/English language switch, mobile menu, animation, and WhatsApp lead form
+- `assets/icons/` — logo and favicon
+- `assets/images/` — project images extracted from the company profile PDF
 
-The first form submission will automatically:
-- Create the `three_x` database (if it does not exist).
-- Create the `quote_requests` table with UTF-8 encoding.
+## How to run
 
-You can also create the table manually if you prefer:
+Open `index.html` directly in a browser.
 
-```sql
-CREATE DATABASE IF NOT EXISTS three_x CHARACTER SET utf8mb4;
-USE three_x;
+For local development, you can also use VS Code Live Server:
 
-CREATE TABLE IF NOT EXISTS quote_requests (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    phone VARCHAR(50) NOT NULL,
-    area VARCHAR(255) NOT NULL,
-    service VARCHAR(255) NOT NULL,
-    message TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-```
+1. Open this folder in VS Code.
+2. Install the “Live Server” extension.
+3. Right-click `index.html`.
+4. Click “Open with Live Server”.
 
-## Quick Test
-Submit the HTML form or run:
+## How the contact form works
 
-```powershell
-curl.exe -X POST "http://localhost/three_x/submit_quote.php" `
-  -F "language=en" `
-  -F "name=John Doe" `
-  -F "phone=+1555123456" `
-  -F "area=Riyadh" `
-  -F "service=Design" `
-  -F "message=Please contact me about a new project."
-```
+The form does not store data on the website. When a visitor submits it, the form opens WhatsApp with a prepared message sent to:
 
-A JSON response of `{"success":true,...}` indicates that the backend, database connection, and table creation all succeeded.
+`+966 50 420 2782`
 
-## Troubleshooting
-- Ensure Apache, MySQL, and PHP services in WampServer are green.
-- phpMyAdmin (`http://localhost/phpmyadmin`) lets you inspect the `quote_requests` table.
-- Check `C:\wamp64\logs\apache_error.log` if you receive a `500` response.
-"# companywebsite" 
+## Suggested next improvements before real advertising
+
+1. Replace any image if you want sharper original project photos.
+2. Add Google Analytics or Meta Pixel after creating ad accounts.
+3. Connect the domain and SSL hosting.
+4. Add a privacy policy page if paid ads collect leads or track users.
+5. Add Arabic-first landing page if most ad traffic is from Saudi Arabia.

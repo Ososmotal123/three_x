@@ -1,0 +1,7 @@
+<svg width="220" height="72" viewBox="0 0 220 72" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TREEX Riyadh logo">
+  <rect width="220" height="72" rx="18" fill="#11100D"/>
+  <path d="M26 47C58 18 92 18 122 47C149 73 179 61 195 39" stroke="#C7A05A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M29 52C58 29 88 29 114 52" stroke="#C2504D" stroke-width="3" stroke-linecap="round"/>
+  <text x="24" y="32" fill="white" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="21" letter-spacing="4">TREEX</text>
+  <text x="25" y="52" fill="#D8D2C4" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="2.5">GYPSUM & DECORATION</text>
+</svg>
